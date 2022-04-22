@@ -1,9 +1,11 @@
 # A space invader game created using Pygame
+import os
 from turtle import distance
 import pygame
 from pygame import mixer
 import random
 import math
+
 
 # Initialize the game engine
 pygame.init()
@@ -12,20 +14,20 @@ pygame.init()
 screen = pygame.display.set_mode([800,600])
 
 # Background image
-background = pygame.image.load('C:\\Users\\IFEANYI PC\\Documents\\Space Invaders\\background.png')
+background = pygame.image.load('background.png')
 
 #Background Sound
-mixer.music.load('C:\\Users\\IFEANYI PC\\Documents\\Space Invaders\\sfx.mp3')
+mixer.music.load('sfx.mp3')
 mixer.music.play(-1)
 
 # Title and Icon
 pygame.display.set_caption("Space Aliens")
-icon = pygame.image.load('C:\\Users\\IFEANYI PC\\Documents\\Space Invaders\\alien.png')
+icon = pygame.image.load('alien.png')
 pygame.display.set_icon(icon)
 
 
 # Player Image
-playerImg = pygame.image.load('C:\\Users\\IFEANYI PC\\Documents\\Space Invaders\\player.png')
+playerImg = pygame.image.load('player.png')
 playerX = 370
 playerY = 480
 playerX_change = 0
@@ -39,14 +41,14 @@ enemyX_change = []
 enemyY_change = []
 num_of_enemies = 6
 for i in range(num_of_enemies):
-    enemyImg.append(pygame.image.load('C:\\Users\\IFEANYI PC\\Documents\\Space Invaders\\alien.png'))
+    enemyImg.append(pygame.image.load('alien.png'))
     enemyX.append(random.randint(0,735))
     enemyY.append(random.randint(50,150))
     enemyX_change.append(0.3)
     enemyY_change.append(40)
 
 # Bullet Image
-bulletImg = pygame.image.load('C:\\Users\\IFEANYI PC\\Documents\\Space Invaders\\bullet.png')
+bulletImg = pygame.image.load('bullet.png')
 bulletX = 0
 bulletY = 480
 bulletX_change = 0.3
@@ -56,13 +58,13 @@ bullet_state = 'ready'
 
 # Score
 score_value = 0
-font = pygame.font.Font('C:\\Users\\IFEANYI PC\\Documents\\Space Invaders\\SPACEBOY.ttf', 32)
+font = pygame.font.Font('SPACEBOY.ttf', 32)
 
 textX = 10
 textY = 10
 
 # Game Over text
-over_font = pygame.font.Font('C:\\Users\\IFEANYI PC\\Documents\\Space Invaders\\SPACEBOY.ttf', 64)
+over_font = pygame.font.Font('SPACEBOY.ttf', 64)
 
 
 
@@ -108,12 +110,12 @@ while running:
         # if keystroke is pressed check whether its right or left
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
-                playerX_change = -5
+                playerX_change = -2
             if event.key == pygame.K_RIGHT:
-                playerX_change = 5
+                playerX_change = 2
             if event.key == pygame.K_SPACE:
-                if bullet_state is "ready":
-                    bulletSound = mixer.Sound("C:\\Users\\IFEANYI PC\\Documents\\Space Invaders\\laser.mp3")
+                if bullet_state == "ready":
+                    bulletSound = mixer.Sound("laser.mp3")
                     bulletSound.play()
                     # Get the current x cordinate of the spaceship
                     bulletX = playerX
@@ -151,7 +153,7 @@ while running:
         # Collision
         collision = isCollision(enemyX[i], enemyY[i], bulletX, bulletY)
         if collision:
-            explosionSound = mixer.Sound("C:\\Users\\IFEANYI PC\\Documents\\Space Invaders\\explosion.wav")
+            explosionSound = mixer.Sound("explosion.wav")
             explosionSound.play()
             bulletY = 480
             bullet_state = "ready"
