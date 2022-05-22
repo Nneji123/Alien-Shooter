@@ -23,6 +23,9 @@ python alien_shooter.py
 ## Gameplay Preview
 ![Space-Aliens-2022-04-21-00-40-00](https://user-images.githubusercontent.com/101701760/164342905-87465f96-dece-4e54-aee1-02a8bd1dfcc9.gif)
 
+**You can now check out the game with Replit!**
+
+[![Run on Repl.it](https://repl.it/badge/github/Nneji123/Alien-Shooter)](https://repl.it/github/Nneji123/Alien-Shooter)
 
 
 
