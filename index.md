@@ -1,37 +1,31 @@
-## Welcome to GitHub Pages
+## Alien Shooter
+[![Language](https://img.shields.io/badge/language-python-blue.svg?style=flat)](https://www.python.org)
+[![Module](https://img.shields.io/badge/module-pygame-brightgreen.svg?style=flat)](http://www.pygame.org/news.html)
 
-You can use the [editor on GitHub](https://github.com/Nneji123/Alien-Shooter/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## About the Game
+This is a game similar to 'Space Invaders' where the user controls a spaceship and shoots bullets at aliens and earns points. The aim is to earn as much points as possible before the aliens get to your vicinity. If the alien gets too close to the user a 'GAME OVER' caption will be displayed.
+![Screenshot (75)](https://user-images.githubusercontent.com/101701760/164342964-7bfebdb5-e28c-4cd8-a8c0-97c779dd34c5.png)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+## Requirements
+If you have the correct version of Python and Pygame installed, you can run the program in the command prompt / terminal.
+Also you have to change the directory of where each asset is kept to your main script directory.
+```bash
+cd Alien Shooter
+python alien_shooter.py
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+**Note:** If you're using Python 3, replace the command "python" with "python3"
 
-### Jekyll Themes
+**MacOS Mojave**: You need to use Python 3.7.2 or greater: [Source](https://github.com/pygame/pygame/issues/555)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Nneji123/Alien-Shooter/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## Gameplay Preview
+![Space-Aliens-2022-04-21-00-40-00](https://user-images.githubusercontent.com/101701760/164342905-87465f96-dece-4e54-aee1-02a8bd1dfcc9.gif)
 
-### Support or Contact
+**You can now check out the game with Replit!**
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+[![Run on Repl.it](https://repl.it/badge/github/Nneji123/Alien-Shooter)](https://repl.it/github/Nneji123/Alien-Shooter)
+
+
+
