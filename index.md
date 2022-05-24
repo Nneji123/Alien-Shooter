@@ -3,7 +3,7 @@
 [![Module](https://img.shields.io/badge/module-pygame-brightgreen.svg?style=flat)](http://www.pygame.org/news.html)
 
 ## About the Game
-This is a game similar to 'Space Invaders' where the user controls a spaceship and shoots bullets at aliens and earns points. The aim is to earn as much points as possible before the aliens get to your vicinity. If the alien gets too close to the user a 'GAME OVER' caption will be displayed.
+This is a game similar to **Space Invaders** where the user controls a spaceship and shoots bullets at aliens and earns points. The aim is to earn as much points as possible before the aliens get to your vicinity. If the alien gets too close to the user a 'GAME OVER' caption will be displayed.
 ![Screenshot (75)](https://user-images.githubusercontent.com/101701760/164342964-7bfebdb5-e28c-4cd8-a8c0-97c779dd34c5.png)
 
 
