@@ -12,7 +12,7 @@ This is a game similar to 'Space Invaders' where the user controls a spaceship a
 If you have the correct version of Python and Pygame installed, you can run the program in the command prompt / terminal.
 Also you have to change the directory of where each asset is kept to your main script directory.
 ```bash
-cd Alien Shooter
+cd SpaceInvaders
 python alien_shooter.py
 ```
 
