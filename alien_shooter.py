@@ -1,6 +1,5 @@
-# A space invader game created using Pygame
-import os
-from turtle import distance
+"""A space invader game created using Pygame
+"""
 import pygame
 from pygame import mixer
 import random
@@ -14,20 +13,26 @@ pygame.init()
 screen = pygame.display.set_mode([800,600])
 
 # Background image
-background = pygame.image.load('background.png')
+background = pygame.image.load('assets/background.png')
 
 #Background Sound
-mixer.music.load('sfx.mp3')
+mixer.music.load('assets/sfx.mp3')
 mixer.music.play(-1)
 
 # Title and Icon
-pygame.display.set_caption("Space Aliens")
-icon = pygame.image.load('alien.png')
+pygame.display.set_caption("Alien Shooter")
+icon = pygame.image.load('assets/player.png')
 pygame.display.set_icon(icon)
+
+# create a new font object
+watermark_font = pygame.font.Font(None, 20)
+# render the text onto a surface
+watermark_text = watermark_font.render("Made by Ifeanyi Nneji", True, (255, 255, 255))
+# blit the watermark onto the screen
 
 
 # Player Image
-playerImg = pygame.image.load('player.png')
+playerImg = pygame.image.load('assets/player.png')
 playerX = 370
 playerY = 480
 playerX_change = 0
@@ -39,16 +44,16 @@ enemyX = []
 enemyY = []
 enemyX_change = []
 enemyY_change = []
-num_of_enemies = 6
+num_of_enemies = 5
 for _ in range(num_of_enemies):
-    enemyImg.append(pygame.image.load('alien.png'))
+    enemyImg.append(pygame.image.load('assets/alien.png'))
     enemyX.append(random.randint(0,735))
     enemyY.append(random.randint(50,150))
     enemyX_change.append(0.3)
     enemyY_change.append(40)
 
 # Bullet Image
-bulletImg = pygame.image.load('bullet.png')
+bulletImg = pygame.image.load('assets/bullet.png')
 bulletX = 0
 bulletY = 480
 bulletX_change = 0.3
@@ -58,19 +63,21 @@ bullet_state = 'ready'
 
 # Score
 score_value = 0
-font = pygame.font.Font('SPACEBOY.ttf', 32)
+font = pygame.font.Font('assets/SPACEBOY.ttf', 32)
 
 textX = 10
 textY = 10
 
 # Game Over text
-over_font = pygame.font.Font('SPACEBOY.ttf', 64)
+over_font = pygame.font.Font('assets/SPACEBOY.ttf', 64)
 
 
 
 def show_score(x,y):
     score = font.render(f"Score:{str(score_value)}", True, (255,255,255))
     screen.blit(score,(x,y))
+    screen.blit(watermark_text, (screen.get_width() - watermark_text.get_width() - 10, 10))
+
 
 def game_over_text():
     over_text = over_font.render("GAME OVER", True, (255,255,255))
@@ -85,7 +92,7 @@ def enemy(x, y, i):
 def fire_bullet(x,y):
     global bullet_state
     bullet_state = 'fire'
-    screen.blit(bulletImg, (x + 16, y + 10))
+    screen.blit(bulletImg, (x + 16, y + 13))
 
 def isCollision(enemyX,enemyY,bulletX,bulletY):
     distance = math.sqrt(math.pow(enemyX-bulletX,2) + (math.pow(enemyY-bulletY,2)))
@@ -111,7 +118,7 @@ while running:
             if event.key == pygame.K_RIGHT:
                 playerX_change = 2
             if event.key == pygame.K_SPACE and bullet_state == "ready":
-                bulletSound = mixer.Sound("laser.mp3")
+                bulletSound = mixer.Sound("assets/laser.mp3")
                 bulletSound.play()
                 # Get the current x cordinate of the spaceship
                 bulletX = playerX
@@ -149,7 +156,7 @@ while running:
             enemyY[i] += enemyY_change[i]
 
         if collision := isCollision(enemyX[i], enemyY[i], bulletX, bulletY):
-            explosionSound = mixer.Sound("explosion.wav")
+            explosionSound = mixer.Sound("assets/explosion.wav")
             explosionSound.play()
             bulletY = 480
             bullet_state = "ready"

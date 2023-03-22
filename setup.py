@@ -1,18 +1,17 @@
-import os
 import sys
 from cx_Freeze import setup, Executable
 
 # Include all the required files
 include_files = [
-    "alien.png",
-    "background.png",
-    "bullet.png",
-    "explosion.wav",
-    "laser.mp3",
-    "player.png",
-    "sfx.mp3",
+    "assets/alien.png",
+    "assets/background.png",
+    "assets/bullet.png",
+    "assets/explosion.wav",
+    "assets/laser.mp3",
+    "assets/player.png",
+    "assets/sfx.mp3",
     "icon.ico",
-    "SPACEBOY.ttf",
+    "assets/SPACEBOY.ttf",
 ]
 
 # Dependencies
